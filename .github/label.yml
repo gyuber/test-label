@@ -1,0 +1,23 @@
+name: Add label
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - .github/labels.yml
+  
+jobs:
+  build:
+    runs-on: [ self-hosted ]
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: add label
+      uses: act/action-label-syncer@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.TEST_PAT }}
+      with:
+        manifest: .github/labels.yml
+        token: ${{ secrets.TEST_PAT }}
+        prune: false
