@@ -1,7 +1,7 @@
 - name: cnd907
   description: Something isn't working
   color: d73a4a
-- name: cnd906
+- name: cnd903
   description: Improvements or additions to documentation
   color: 0075ca
 - name: cnd904
